@@ -1,9 +1,9 @@
-import Image from "next/image";
-
 export default function HomePage() {
     return (
-        <>
-            <h2> Homepage</h2>
-        </>
+        <main className="h-screen flex justify-center items-center">
+            <h1 className="text-4xl text-center font-bold mb-8">
+                Welcome to <br /> GymBro!
+            </h1>
+        </main>
     );
 }
