@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
+import ConvexClerkProvider from "@/providers/convex.clerk.provider";
 
 const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
@@ -21,7 +21,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={` ${geistMono.variable} antialiased`}>
-                <ClerkProvider>{children}</ClerkProvider>
+                <ConvexClerkProvider>{children}</ConvexClerkProvider>
             </body>
         </html>
     );
