@@ -4,13 +4,7 @@ import Logo from "./logo.component";
 import DynamicButton from "./dynamic.button.component";
 import DynamicNavbar from "./navbar/dynamic.navbar.component";
 import { navMenuData } from "@/utils/data/nav.menu.items.data";
-import {
-    SignedIn,
-    SignedOut,
-    SignInButton,
-    UserButton,
-    useUser,
-} from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 
 const Header = () => {
     const { isSignedIn } = useUser();
