@@ -14,6 +14,11 @@
     --color-primary-foreground: var(--primary-foreground);
     --color-secondary: var(--secondary);
     --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-gradient-primary: var(--gradient-primary);
+    --color-gradient-hero: var(--gradient-hero);
+    --color-gradient-subtle: var(--gradient-subtle);
+
     --color-muted: var(--muted);
     --color-muted-foreground: var(--muted-foreground);
     --color-accent: var(--accent);
@@ -57,109 +62,144 @@
 }
 
 :root {
-    --background: rgb(255, 255, 255);
-    --foreground: rgb(38, 38, 38);
+    --background: rgb(246, 248, 251);
+    --foreground: rgb(21, 23, 26);
+
     --card: rgb(255, 255, 255);
-    --card-foreground: rgb(38, 38, 38);
+    --card-foreground: rgb(21, 23, 26);
+
     --popover: rgb(255, 255, 255);
-    --popover-foreground: rgb(38, 38, 38);
-    --primary: rgb(245, 158, 11);
-    --primary-foreground: rgb(0, 0, 0);
-    --secondary: rgb(243, 244, 246);
-    --secondary-foreground: rgb(75, 85, 99);
-    --muted: rgb(249, 250, 251);
-    --muted-foreground: rgb(107, 114, 128);
-    --accent: rgb(255, 251, 235);
-    --accent-foreground: rgb(146, 64, 14);
-    --destructive: rgb(239, 68, 68);
+    --popover-foreground: rgb(21, 23, 26);
+
+    --primary: rgb(47, 112, 255);
+    --primary-foreground: rgb(255, 255, 255);
+    --primary-glow: rgb(97, 160, 255);
+
+    --secondary: rgb(10, 23, 43);
+    --secondary-foreground: rgb(255, 255, 255);
+
+    --gradient-primary: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-glow)
+    );
+    --gradient-hero: linear-gradient(
+        135deg,
+        var(--primary) 0%,
+        var(--accent) 100%
+    );
+    --gradient-subtle: linear-gradient(180deg, var(--background), var(--muted));
+
+    --muted: rgb(243, 245, 248);
+    --muted-foreground: rgb(92, 99, 110);
+
+    --accent: rgb(122, 67, 255);
+    --accent-foreground: rgb(255, 255, 255);
+    --destructive: rgb(240, 52, 52);
     --destructive-foreground: rgb(255, 255, 255);
-    --border: rgb(229, 231, 235);
-    --input: rgb(229, 231, 235);
-    --ring: rgb(245, 158, 11);
-    --chart-1: rgb(245, 158, 11);
-    --chart-2: rgb(217, 119, 6);
-    --chart-3: rgb(180, 83, 9);
-    --chart-4: rgb(146, 64, 14);
-    --chart-5: rgb(120, 53, 15);
-    --sidebar: rgb(249, 250, 251);
-    --sidebar-foreground: rgb(38, 38, 38);
-    --sidebar-primary: rgb(245, 158, 11);
-    --sidebar-primary-foreground: rgb(255, 255, 255);
-    --sidebar-accent: rgb(255, 251, 235);
-    --sidebar-accent-foreground: rgb(146, 64, 14);
-    --sidebar-border: rgb(229, 231, 235);
-    --sidebar-ring: rgb(245, 158, 11);
-    --font-sans: Inter, sans-serif;
-    --font-serif: Source Serif 4, serif;
-    --font-mono: JetBrains Mono, monospace;
-    --radius: 0.375rem;
-    --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
-    --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+
+    --border: rgb(230, 232, 236);
+    --input: rgb(230, 232, 236);
+    --ring: rgb(47, 112, 255);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius: 0.5rem;
+
+    --sidebar-background: rgb(250, 250, 250);
+    --sidebar-foreground: rgb(61, 62, 67);
+    --sidebar-primary: rgb(6, 6, 26);
+    --sidebar-primary-foreground: rgb(250, 250, 250);
+    --sidebar-accent: rgb(244, 244, 245);
+    --sidebar-accent-foreground: rgb(6, 6, 26);
+    --sidebar-border: rgb(230, 232, 236);
+    --sidebar-ring: rgb(47, 112, 255);
+
+    --shadow-glow: 0 0 40px rgba(47, 112, 255, 0.3);
+    --shadow-elevated: 0 10px 30px -10px rgba(47, 112, 255, 0.2);
+
+    --shadow-2xs: 0px 4px 8px -1px rgba(0, 0, 0, 0.05);
+    --shadow-xs: 0px 4px 8px -1px rgba(0, 0, 0, 0.05);
+
     --shadow-sm:
-        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+        0px 4px 8px -1px rgba(0, 0, 0, 0.1), 0px 1px 2px -2px rgba(0, 0, 0, 0.1);
+
     --shadow:
-        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+        0px 4px 8px -1px rgba(0, 0, 0, 0.1), 0px 1px 2px -2px rgba(0, 0, 0, 0.1);
+
     --shadow-md:
-        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 2px 4px -2px hsl(0 0% 0% / 0.1);
+        0px 4px 8px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+
     --shadow-lg:
-        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 4px 6px -2px hsl(0 0% 0% / 0.1);
+        0px 4px 8px -1px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
+
     --shadow-xl:
-        0px 4px 8px -1px hsl(0 0% 0% / 0.1),
-        0px 8px 10px -2px hsl(0 0% 0% / 0.1);
-    --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+        0px 4px 8px -1px rgba(0, 0, 0, 0.1),
+        0px 8px 10px -2px rgba(0, 0, 0, 0.1);
+
+    --shadow-2xl: 0px 4px 8px -1px rgba(0, 0, 0, 0.25);
 }
 
 .dark {
-    --background: rgb(23, 23, 23);
-    --foreground: rgb(229, 229, 229);
-    --card: rgb(38, 38, 38);
-    --card-foreground: rgb(229, 229, 229);
-    --popover: rgb(38, 38, 38);
-    --popover-foreground: rgb(229, 229, 229);
-    --primary: rgb(245, 158, 11);
-    --primary-foreground: rgb(0, 0, 0);
-    --secondary: rgb(38, 38, 38);
-    --secondary-foreground: rgb(229, 229, 229);
-    --muted: rgb(38, 38, 38);
-    --muted-foreground: rgb(163, 163, 163);
-    --accent: rgb(146, 64, 14);
-    --accent-foreground: rgb(253, 230, 138);
-    --destructive: rgb(239, 68, 68);
-    --destructive-foreground: rgb(255, 255, 255);
-    --border: rgb(64, 64, 64);
-    --input: rgb(64, 64, 64);
-    --ring: rgb(245, 158, 11);
-    --chart-1: rgb(251, 191, 36);
-    --chart-2: rgb(217, 119, 6);
-    --chart-3: rgb(146, 64, 14);
-    --chart-4: rgb(180, 83, 9);
-    --chart-5: rgb(146, 64, 14);
-    --sidebar: rgb(15, 15, 15);
-    --sidebar-foreground: rgb(229, 229, 229);
-    --sidebar-primary: rgb(245, 158, 11);
+    --background: rgb(5, 10, 34);
+    --foreground: rgb(244, 247, 255);
+
+    --card: rgb(5, 10, 34);
+    --card-foreground: rgb(244, 247, 255);
+
+    --popover: rgb(5, 10, 34);
+    --popover-foreground: rgb(244, 247, 255);
+
+    --primary: rgb(244, 247, 255);
+    --primary-foreground: rgb(20, 24, 37);
+
+    --secondary: rgb(28, 36, 51);
+    --secondary-foreground: rgb(244, 247, 255);
+
+    --muted: rgb(28, 36, 51);
+    --muted-foreground: rgb(134, 144, 164);
+
+    --accent: rgb(28, 36, 51);
+    --accent-foreground: rgb(244, 247, 255);
+
+    --destructive: rgb(122, 38, 38);
+    --destructive-foreground: rgb(244, 247, 255);
+
+    --border: rgb(28, 36, 51);
+    --input: rgb(28, 36, 51);
+    --ring: rgb(209, 215, 232);
+
+    --sidebar-background: rgb(6, 6, 26);
+    --sidebar-foreground: rgb(244, 244, 245);
+
+    --sidebar-primary: rgb(73, 118, 255);
     --sidebar-primary-foreground: rgb(255, 255, 255);
-    --sidebar-accent: rgb(146, 64, 14);
-    --sidebar-accent-foreground: rgb(253, 230, 138);
-    --sidebar-border: rgb(64, 64, 64);
-    --sidebar-ring: rgb(245, 158, 11);
-    --font-sans: Inter, sans-serif;
-    --font-serif: Source Serif 4, serif;
-    --font-mono: JetBrains Mono, monospace;
-    --radius: 0.375rem;
-    --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
-    --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+
+    --sidebar-accent: rgb(28, 28, 41);
+    --sidebar-accent-foreground: rgb(244, 244, 245);
+
+    --sidebar-border: rgb(28, 28, 41);
+    --sidebar-ring: rgb(47, 112, 255);
+
+    --shadow-2xs: 0px 4px 8px -1px rgba(0, 0, 0, 0.05);
+    --shadow-xs: 0px 4px 8px -1px rgba(0, 0, 0, 0.05);
+
     --shadow-sm:
-        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+        0px 4px 8px -1px rgba(0, 0, 0, 0.1), 0px 1px 2px -2px rgba(0, 0, 0, 0.1);
+
     --shadow:
-        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+        0px 4px 8px -1px rgba(0, 0, 0, 0.1), 0px 1px 2px -2px rgba(0, 0, 0, 0.1);
+
     --shadow-md:
-        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 2px 4px -2px hsl(0 0% 0% / 0.1);
+        0px 4px 8px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+
     --shadow-lg:
-        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 4px 6px -2px hsl(0 0% 0% / 0.1);
+        0px 4px 8px -1px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
+
     --shadow-xl:
-        0px 4px 8px -1px hsl(0 0% 0% / 0.1),
-        0px 8px 10px -2px hsl(0 0% 0% / 0.1);
-    --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+        0px 4px 8px -1px rgba(0, 0, 0, 0.1),
+        0px 8px 10px -2px rgba(0, 0, 0, 0.1);
+
+    --shadow-2xl: 0px 4px 8px -1px rgba(0, 0, 0, 0.25);
 }
 
 @layer base {
@@ -168,5 +208,129 @@
     }
     body {
         @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .bg-gradient-primary {
+        background-image: var(--gradient-primary);
+    }
+
+    .bg-gradient-hero {
+        background-image: var(--gradient-hero);
+    }
+
+    .bg-gradient-subtle {
+        background-image: var(--gradient-subtle);
+    }
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scale-in {
+        0% {
+            transform: scale(0.95);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes glow-pulse {
+        0%,
+        100% {
+            box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+        }
+        50% {
+            box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+        }
+    }
+
+    .animate-accordion-down {
+        animation: accordion-down 0.2s ease-out;
+    }
+
+    .animate-accordion-up {
+        animation: accordion-up 0.2s ease-out;
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.6s ease-out;
+    }
+
+    .animate-scale-in {
+        animation: scale-in 0.4s ease-out;
+    }
+
+    .animate-glow-pulse {
+        animation: glow-pulse 2s ease-in-out infinite;
+    }
+}
+
+@layer components {
+    .container {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem; /* adjust padding as needed */
+        padding-right: 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .container {
+            max-width: 640px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 768px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            max-width: 1024px;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .container {
+            max-width: 1280px;
+        }
+    }
+
+    @media (min-width: 1536px) {
+        .container {
+            max-width: 1536px;
+        }
     }
 }

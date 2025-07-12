@@ -12,7 +12,7 @@ const DynamicNavbar = ({ navMenuData }: DynamicNavigationMenuProps) => {
     return (
         <nav className="w-screen">
             <div className="relative">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="container mx-auto ">
                     <div className="w-full flex justify-between items-center h-16">
                         <Logo />
                         <div className="lg:hidden">

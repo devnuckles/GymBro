@@ -1,7 +1,16 @@
 export interface DynamicButtonProps {
     href?: string;
     btnText: string;
-    variant?: "default" | "destructive" | "outline" | "secondary" | "link";
+    variant?:
+        | "default"
+        | "destructive"
+        | "outline"
+        | "secondary"
+        | "link"
+        | "hero"
+        | "glow";
+
+    size?: "default" | "sm" | "lg" | "icon";
     onClick?: (event?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
