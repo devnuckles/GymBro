@@ -27,7 +27,7 @@ const DesktopNavbar = ({ navMenuData }: DynamicNavigationMenuProps) => {
                             </Link>
                         ) : (
                             <>
-                                <button className="px-3 py-2 text-gray-700 transition-all duration-300 hover:text-primary font-medium focus:outline-none">
+                                <button className="cursor-pointer px-3 py-2 text-gray-700 transition-all duration-300 hover:text-primary font-medium focus:outline-none">
                                     {item.label}
                                 </button>
 

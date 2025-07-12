@@ -59,7 +59,7 @@ const Hero = () => {
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row gap-4">
                         <DynamicButton
-                            variant="hero"
+                            variant="gradient"
                             size="lg"
                             btnText="Start Training Now"
                         />
