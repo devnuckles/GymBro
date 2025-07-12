@@ -1,16 +1,17 @@
 export interface DynamicButtonProps {
     href?: string;
-    btnText: string;
+    btnText?: string;
+    className?: string;
+    btnIcon?: React.ReactNode;
+    size?: "default" | "sm" | "lg" | "icon";
     variant?:
         | "default"
         | "destructive"
         | "outline"
         | "secondary"
         | "link"
-        | "hero"
+        | "gradient"
         | "glow";
-
-    size?: "default" | "sm" | "lg" | "icon";
     onClick?: (event?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const MobileNavbar = ({ navMenuData }: DynamicNavigationMenuProps) => {
     return (
-        <div className="lg:hidden bg-white px-4 pb-4 space-y-4">
+        <div className="absolute top-20 left-0 w-screen lg:hidden bg-white px-4 pb-4 space-y-4">
             {navMenuData.map((item, index) => (
                 <div key={index}>
                     {item.href && !item.children ? (

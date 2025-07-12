@@ -4,20 +4,33 @@ import { DynamicButtonProps } from "@/types/common/dynamic.component.interfaces"
 
 const DynamicButton = ({
     href,
+    btnIcon,
     btnText,
-    variant = "default",
-    size = "default",
     onClick,
+    className = "",
+    size = "default",
+    variant = "default",
 }: DynamicButtonProps) => {
+    const content = (
+        <div className="flex justify-between">
+            {btnIcon && <span>{btnIcon}</span>}
+            <span>{btnText}</span>
+        </div>
+    );
+
     return href ? (
         <Link href={href} className="cursor-pointer">
-            <Button variant={variant} size={size} asChild>
-                <span>{btnText}</span>
+            <Button variant={variant} size={size} className={className} asChild>
+                {content}
             </Button>
         </Link>
     ) : (
-        <Button variant={variant} onClick={onClick} className="cursor-pointer">
-            {btnText}
+        <Button
+            variant={variant}
+            onClick={onClick}
+            className={`cursor-pointer ${className}`}
+        >
+            {content}
         </Button>
     );
 };
