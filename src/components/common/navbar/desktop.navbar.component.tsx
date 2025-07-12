@@ -21,13 +21,13 @@ const DesktopNavbar = ({ navMenuData }: DynamicNavigationMenuProps) => {
                         {item.href && !item.children ? (
                             <Link
                                 href={item.href}
-                                className="px-3 py-2 text-gray-700 transition-all duration-300 hover:text-primary font-medium"
+                                className="px-3 py-2 text-gray-700 font-medium transition-all duration-300 hover:text-primary  hover:tracking-wide"
                             >
                                 {item.label}
                             </Link>
                         ) : (
                             <>
-                                <button className="cursor-pointer px-3 py-2 text-gray-700 transition-all duration-300 hover:text-primary font-medium focus:outline-none">
+                                <button className="cursor-pointer px-3 py-2 text-gray-700 font-medium  transition-all duration-300 hover:text-primary  hover:tracking-wide focus:outline-none">
                                     {item.label}
                                 </button>
 

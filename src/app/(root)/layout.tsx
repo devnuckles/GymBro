@@ -5,7 +5,7 @@ const rootLayout = ({ children }: { children: ReactNode }) => {
     return (
         <>
             <Header />
-            {children}
+            <div className="py-26">{children}</div>
         </>
     );
 };
