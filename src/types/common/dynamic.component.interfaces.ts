@@ -1,9 +1,12 @@
+import { ReactNode } from "react";
 export interface DynamicButtonProps {
     href?: string;
     btnText?: string;
+    disabled?: boolean;
     className?: string;
     btnIcon?: React.ReactNode;
     size?: "default" | "sm" | "lg" | "icon";
+    onClick?: (event?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     variant?:
         | "default"
         | "destructive"
@@ -12,7 +15,6 @@ export interface DynamicButtonProps {
         | "link"
         | "gradient"
         | "glow";
-    onClick?: (event?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export interface DynamicMegaMenuItem {
@@ -34,4 +36,13 @@ export interface DynamicMenuItem {
 
 export interface DynamicNavigationMenuProps {
     navMenuData: DynamicMenuItem[];
+}
+
+export interface DynamicCardProps {
+    title?: string;
+    description?: string;
+    action?: ReactNode;
+    content?: ReactNode;
+    footer?: ReactNode;
+    className?: string;
 }

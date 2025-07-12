@@ -9,6 +9,7 @@ const DynamicButton = ({
     onClick,
     className = "",
     size = "default",
+    disabled = false,
     variant = "default",
 }: DynamicButtonProps) => {
     const content = (
@@ -20,7 +21,13 @@ const DynamicButton = ({
 
     return href ? (
         <Link href={href} className="cursor-pointer">
-            <Button variant={variant} size={size} className={className} asChild>
+            <Button
+                asChild
+                size={size}
+                variant={variant}
+                disabled={disabled}
+                className={className}
+            >
                 {content}
             </Button>
         </Link>
@@ -28,6 +35,7 @@ const DynamicButton = ({
         <Button
             variant={variant}
             onClick={onClick}
+            disabled={disabled}
             className={`cursor-pointer ${className}`}
         >
             {content}

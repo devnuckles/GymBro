@@ -22,6 +22,10 @@ const buttonVariants = cva(
                 gradient:
                     "bg-gradient-hero text-primary-foreground hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold",
                 glow: "bg-primary text-primary-foreground hover:animate-glow-pulse transition-all duration-300",
+                callActive:
+                    "w-40 text-xl rounded-3xl text-white relativ bg-destructive hover:bg-destructive/90",
+                callEnded:
+                    "w-40 text-xl rounded-3xl text-white relativ bg-green-600 hover:bg-green-700",
             },
             size: {
                 default: "h-10 px-4 py-2",
