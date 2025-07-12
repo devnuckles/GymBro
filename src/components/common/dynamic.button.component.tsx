@@ -1,12 +1,6 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
-
-interface DynamicButtonProps {
-    href?: string;
-    btnText: string;
-    variant?: "default" | "destructive" | "outline" | "secondary" | "link";
-    onClick?: (event?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-}
+import { DynamicButtonProps } from "@/types/common/dynamic.component.interfaces";
 
 const DynamicButton = ({
     href,
