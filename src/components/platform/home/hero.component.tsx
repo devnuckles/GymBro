@@ -1,5 +1,6 @@
 import DynamicButton from "@/components/common/dynamic.button.component";
 import { Zap, Brain, Target, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 const Hero = () => {
     return (
@@ -96,7 +97,7 @@ const Hero = () => {
                 {/* Hero Image */}
                 <div className="relative animate-scale-in">
                     <div className="relative overflow-hidden rounded-2xl shadow-elevated">
-                        <img
+                        <Image
                             src="/assets/hero-gym-ai.jpg"
                             alt="AI Gym Trainer Interface"
                             className="w-full h-auto"
