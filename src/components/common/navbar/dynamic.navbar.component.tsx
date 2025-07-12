@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { AlignJustify } from "lucide-react";
-import DynamicButton from "./dynamic.button.component";
-import MobileNavbar from "./navbar/mobile.navbar.component";
-import DesktopNavbar from "./navbar/desktop.navbar.component";
+import MobileNavbar from "./mobile.navbar.component";
+import DesktopNavbar from "./desktop.navbar.component";
+import DynamicButton from "../dynamic.button.component";
 import { DynamicNavigationMenuProps } from "@/types/common/dynamic.component.interfaces";
 
 const DynamicNavbar = ({ navMenuData }: DynamicNavigationMenuProps) => {

@@ -4,7 +4,7 @@ import HeroRight from "./hero.right.component";
 const Hero = () => {
     return (
         <section className="bg-gradient-subtle flex items-center justify-center">
-            <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center py-28">
+            <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 <HeroLeft />
                 <HeroRight />
             </div>

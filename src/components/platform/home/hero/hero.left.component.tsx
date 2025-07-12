@@ -15,8 +15,9 @@ const HeroLeft = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
                 <DynamicButton
-                    variant="gradient"
                     size="lg"
+                    variant="gradient"
+                    href="/generate-workout"
                     btnText="Start Training Now"
                 />
 
