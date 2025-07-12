@@ -8,6 +8,23 @@ interface HandlersParams {
     setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
 }
 
+// Strictly define expected structure of a transcript message
+interface TranscriptMessage {
+    type: "transcript";
+    transcriptType: "final" | "interim";
+    transcript: string;
+    role: "assistant" | "user";
+}
+
+// Optional: More message types can be added here
+type VapiMessage = TranscriptMessage | Record<string, unknown>;
+
+interface VapiError {
+    message: string;
+    code?: number;
+    stack?: string;
+}
+
 export function createVapiHandlers({
     setCallActive,
     setConnecting,
@@ -15,37 +32,44 @@ export function createVapiHandlers({
     setCallEnded,
     setMessages,
 }: HandlersParams) {
-    const onCallStart = () => {
+    const onCallStart = (): void => {
         setConnecting(false);
         setCallActive(true);
         setCallEnded(false);
     };
 
-    const onCallEnd = () => {
+    const onCallEnd = (): void => {
         setCallActive(false);
         setConnecting(false);
         setIsSpeaking(false);
         setCallEnded(true);
     };
 
-    const onSpeechStart = () => setIsSpeaking(true);
+    const onSpeechStart = (): void => {
+        setIsSpeaking(true);
+    };
 
-    const onSpeechEnd = () => setIsSpeaking(false);
+    const onSpeechEnd = (): void => {
+        setIsSpeaking(false);
+    };
 
-    const onMessage = (message: any) => {
+    const onMessage = (message: VapiMessage): void => {
         if (
             message.type === "transcript" &&
-            message.transcriptType === "final"
+            message.transcriptType === "final" &&
+            typeof message.transcript === "string" &&
+            (message.role === "assistant" || message.role === "user")
         ) {
-            setMessages((prev) => [
-                ...prev,
-                { content: message.transcript, role: message.role },
-            ]);
+            const newMessage: Message = {
+                content: message.transcript,
+                role: message.role,
+            };
+            setMessages((prev) => [...prev, newMessage]);
         }
     };
 
-    const onError = (error: any) => {
-        console.error("Vapi Error", error);
+    const onError = (error: VapiError): void => {
+        console.error("Vapi Error:", error.message);
         setConnecting(false);
         setCallActive(false);
     };
