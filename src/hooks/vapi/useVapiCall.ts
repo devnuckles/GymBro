@@ -68,12 +68,19 @@ export function useVapiCall(): UseVapiCallReturn {
                 ? `${user.firstName} ${user.lastName || ""}`.trim()
                 : "There";
 
-            await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
-                variableValues: {
-                    full_name: fullName,
-                    user_id: user?.id,
-                },
-            });
+            await vapi.start(
+                undefined, // no assistant
+                undefined, // no assistantOverrides
+                undefined, // no squad
+                process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, // workflow ID
+
+                {
+                    variableValues: {
+                        fullName: fullName,
+                        userId: user?.id,
+                    },
+                }
+            );
         } catch (error) {
             console.error("Failed to start call", error);
             setConnecting(false);
