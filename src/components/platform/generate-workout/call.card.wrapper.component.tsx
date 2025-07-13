@@ -25,7 +25,7 @@ const CallCardWrapper = ({
         },
         {
             userStatus: true,
-            userTitle: "Fitness & Diet Coach",
+            userTitle: "Trainee",
             userFullName: user
                 ? `${user.firstName} ${user.lastName || ""}`.trim()
                 : "Guest",
