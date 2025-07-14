@@ -1,7 +1,9 @@
+import ProfileComponent from "@/components/platform/profile/profile.component";
+
 export default function ProfilePage() {
     return (
         <>
-            <h2> Profile Page</h2>
+            <ProfileComponent />
         </>
     );
 }
