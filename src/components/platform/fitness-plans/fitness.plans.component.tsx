@@ -15,6 +15,8 @@ const FitnessPlansComponent = () => {
     const allPlans = useQuery(api.plans.getUserPlans, { userId });
     const [selectedPlanId, setSelectedPlanId] = useState<string | null>(null);
 
+    console.log(allPlans);
+
     const activePlan = allPlans?.find((plan) => plan.isActive);
     const currentPlan = selectedPlanId
         ? allPlans?.find((plan) => plan._id === selectedPlanId)

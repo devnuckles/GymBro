@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { FitnessPlan } from "../platform/fitness-plans/fitness.plans.interface";
 export interface DynamicButtonProps {
     href?: string;
     btnText?: string | React.ReactNode;
@@ -47,7 +48,7 @@ export interface DynamicCardProps {
     className?: string;
 }
 
-interface DynamicTab {
+export interface DynamicTab {
     key: string;
     label: string;
     icon?: React.ReactNode;
@@ -57,7 +58,7 @@ interface DynamicTab {
 export interface DynamicTabsProps {
     title?: string;
     tabs: DynamicTab[];
-    plan?: any;
+    plan?: FitnessPlan;
 }
 
 export interface DynamicAccordionItem {

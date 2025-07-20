@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { UserResource } from "@clerk/types";
 import CornerElements from "../../common/corner.elements.component";
 
@@ -15,10 +16,11 @@ const FitnessPlansHeader = ({
                 <div className="relative">
                     {user.imageUrl ? (
                         <div className="relative w-24 h-24 overflow-hidden rounded-lg">
-                            <img
+                            <Image
                                 src={user.imageUrl}
                                 alt={user.fullName || "Profile"}
                                 className="w-full h-full object-cover"
+                                fill
                             />
                         </div>
                     ) : (

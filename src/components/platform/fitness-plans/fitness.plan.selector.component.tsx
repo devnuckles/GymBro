@@ -1,7 +1,13 @@
 import CornerElements from "../../common/corner.elements.component";
 import DynamicButton from "@/components/common/dynamic.button.component";
+import { FitnessPlan } from "@/types/platform/fitness-plans/fitness.plans.interface";
+import { FitnessPlanSelectorProps } from "@/types/platform/fitness-plans/fitness.plans.props.interface";
 
-const FitnessPlanSelector = ({ plans, selectedPlanId, onSelect }: any) => (
+const FitnessPlanSelector = ({
+    plans,
+    selectedPlanId,
+    onSelect,
+}: FitnessPlanSelectorProps) => (
     <div className="relative backdrop-blur-sm border border-border p-6">
         <CornerElements />
         <div className="flex items-center justify-between mb-4">
@@ -15,7 +21,7 @@ const FitnessPlanSelector = ({ plans, selectedPlanId, onSelect }: any) => (
         </div>
 
         <div className="flex flex-wrap gap-2">
-            {plans.map((plan: any) => (
+            {plans.map((plan: FitnessPlan) => (
                 <DynamicButton
                     key={plan._id}
                     onClick={() => onSelect(plan._id)}
