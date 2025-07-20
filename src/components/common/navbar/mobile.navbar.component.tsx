@@ -1,13 +1,17 @@
-import { DynamicNavigationMenuProps } from "@/types/common/dynamic.component.interfaces";
 import Link from "next/link";
+import { MobileNavbarProps } from "@/types/common/dynamic.component.interfaces";
 
-const MobileNavbar = ({ navMenuData }: DynamicNavigationMenuProps) => {
+const MobileNavbar = ({ navMenuData, closeMobileMenu }: MobileNavbarProps) => {
     return (
         <div className="absolute top-20 left-0 w-screen lg:hidden bg-white px-4 pb-4 space-y-4">
             {navMenuData.map((item, index) => (
                 <div key={index}>
                     {item.href && !item.children ? (
-                        <Link href={item.href} className="block text-gray-700">
+                        <Link
+                            href={item.href}
+                            className="block text-gray-700"
+                            onClick={closeMobileMenu}
+                        >
                             {item.label}
                         </Link>
                     ) : (
@@ -26,6 +30,7 @@ const MobileNavbar = ({ navMenuData }: DynamicNavigationMenuProps) => {
                                                 <Link
                                                     href={link.href}
                                                     className="text-gray-600 text-sm"
+                                                    onClick={closeMobileMenu}
                                                 >
                                                     {link.label}
                                                 </Link>
