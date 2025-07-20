@@ -10,6 +10,9 @@ import { DynamicNavigationMenuProps } from "@/types/common/dynamic.component.int
 const DynamicNavbar = ({ navMenuData }: DynamicNavigationMenuProps) => {
     const [mobileOpen, setMobileOpen] = useState(false);
 
+    const toggleMobileMenu = () => setMobileOpen((prev) => !prev);
+    const closeMobileMenu = () => setMobileOpen(false);
+
     return (
         <nav>
             <div className="lg:hidden">
@@ -18,13 +21,18 @@ const DynamicNavbar = ({ navMenuData }: DynamicNavigationMenuProps) => {
                     variant="gradient"
                     className="text-3xl"
                     btnIcon={<AlignJustify />}
-                    onClick={() => setMobileOpen(!mobileOpen)}
+                    onClick={toggleMobileMenu}
                 />
             </div>
 
             <DesktopNavbar navMenuData={navMenuData} />
 
-            {mobileOpen && <MobileNavbar navMenuData={navMenuData} />}
+            {mobileOpen && (
+                <MobileNavbar
+                    navMenuData={navMenuData}
+                    closeMobileMenu={closeMobileMenu}
+                />
+            )}
         </nav>
     );
 };

@@ -39,6 +39,10 @@ export interface DynamicNavigationMenuProps {
     navMenuData: DynamicMenuItem[];
 }
 
+export interface MobileNavbarProps extends DynamicNavigationMenuProps {
+    closeMobileMenu: () => void;
+}
+
 export interface DynamicCardProps {
     title?: string;
     description?: string;
