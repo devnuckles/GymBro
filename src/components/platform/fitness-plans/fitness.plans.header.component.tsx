@@ -1,7 +1,11 @@
 import { UserResource } from "@clerk/types";
-import CornerElements from "./corner.elements.component";
+import CornerElements from "../../common/corner.elements.component";
 
-const ProfileHeader = ({ user }: { user: UserResource | null | undefined }) => {
+const FitnessPlansHeader = ({
+    user,
+}: {
+    user: UserResource | null | undefined;
+}) => {
     if (!user) return null;
     return (
         <div className="mb-10 relative backdrop-blur-sm border border-border  p-6">
@@ -50,4 +54,4 @@ const ProfileHeader = ({ user }: { user: UserResource | null | undefined }) => {
         </div>
     );
 };
-export default ProfileHeader;
+export default FitnessPlansHeader;

@@ -2,6 +2,7 @@ import { DynamicMenuItem } from "@/types/common/dynamic.component.interfaces";
 
 export const navMenuData: DynamicMenuItem[] = [
     { label: "Generate Workout", href: "/generate-workout" },
+    { label: "Fitness Plans", href: "/fitness-plans" },
     { label: "Profile", href: "/profile" },
     { label: "About", href: "/about" },
 

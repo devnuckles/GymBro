@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 export interface DynamicButtonProps {
     href?: string;
-    btnText?: string;
+    btnText?: string | React.ReactNode;
     disabled?: boolean;
     className?: string;
     btnIcon?: React.ReactNode;
@@ -44,5 +44,31 @@ export interface DynamicCardProps {
     action?: ReactNode;
     content?: ReactNode;
     footer?: ReactNode;
+    className?: string;
+}
+
+interface DynamicTab {
+    key: string;
+    label: string;
+    icon?: React.ReactNode;
+    content: React.ReactNode;
+}
+
+export interface DynamicTabsProps {
+    title?: string;
+    tabs: DynamicTab[];
+    plan?: any;
+}
+
+export interface DynamicAccordionItem {
+    value: string;
+    title: React.ReactNode;
+    countBadge?: string | React.ReactNode;
+    content: React.ReactNode;
+}
+
+export interface DynamicAccordionProps {
+    items: DynamicAccordionItem[];
+    multiple?: boolean;
     className?: string;
 }

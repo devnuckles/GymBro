@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CornerElements from "./corner.elements.component";
+import CornerElements from "../../common/corner.elements.component";
 
 const NoFitnessPlan = () => {
     return (
@@ -20,7 +20,7 @@ const NoFitnessPlan = () => {
                 asChild
                 className="relative overflow-hidden bg-primary text-primary-foreground px-8 py-6 text-lg font-medium"
             >
-                <Link href="/generate-program">
+                <Link href="/generate-workout">
                     <span className="relative flex items-center">
                         Create Your First Plan
                         <ArrowRightIcon className="ml-2 h-5 w-5" />

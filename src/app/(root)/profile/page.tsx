@@ -1,9 +1,13 @@
-import ProfileComponent from "@/components/platform/profile/profile.component";
+import { UserProfile } from "@clerk/nextjs";
 
-export default function ProfilePage() {
+const Profile = () => {
     return (
-        <>
-            <ProfileComponent />
-        </>
+        <div className="container ">
+            <div className="w-full flex items-center justify-center">
+                <UserProfile />
+            </div>
+        </div>
     );
-}
+};
+
+export default Profile;
