@@ -2,8 +2,9 @@ import { AppleIcon, DumbbellIcon } from "lucide-react";
 import DietTabContent from "./diet.tab.content.component";
 import WorkoutTabContent from "./workout.tab.content.component";
 import DynamicTabs from "@/components/common/dynamic.tab.component";
+import { FitnessPlanDetailsProps } from "@/types/platform/fitness-plans/fitness.plans.props.interface";
 
-const FitnessPlanDetails = ({ plan }: any) => {
+const FitnessPlanDetails = ({ plan }: FitnessPlanDetailsProps) => {
     const tabs = [
         {
             key: "workout",

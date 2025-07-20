@@ -1,4 +1,9 @@
-const DietTabContent = ({ plan }: any) => (
+import {
+    Meal,
+    FitnessPlan,
+} from "@/types/platform/fitness-plans/fitness.plans.interface";
+
+const DietTabContent = ({ plan }: { plan: FitnessPlan }) => (
     <div className="space-y-4">
         <div className="flex justify-between items-center mb-4">
             <span className="font-mono text-sm text-muted-foreground">
@@ -12,7 +17,7 @@ const DietTabContent = ({ plan }: any) => (
         <div className="h-px w-full bg-border my-4"></div>
 
         <div className="space-y-4">
-            {plan.dietPlan.meals.map((meal: any, index: number) => (
+            {plan.dietPlan.meals.map((meal: Meal, index: number) => (
                 <div
                     key={index}
                     className="border border-border rounded-lg overflow-hidden p-4"
