@@ -24,6 +24,7 @@ const HeroLeft = () => {
                 <DynamicButton
                     variant="outline"
                     size="lg"
+                    href="https://youtube.com"
                     btnText=" Watch Demo"
                 />
             </div>
