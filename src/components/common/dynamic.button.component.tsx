@@ -20,7 +20,7 @@ const DynamicButton = ({
     );
 
     return href ? (
-        <Link href={href} className="cursor-pointer">
+        <Link href={href} className="cursor-pointer w-full">
             <Button
                 asChild
                 size={size}
